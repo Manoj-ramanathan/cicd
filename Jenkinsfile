@@ -13,6 +13,7 @@ pipeline {
         sh 'npm install'
          sh 'npm run build'
       }
+    }
     stage('deploy') {
       steps {
         sshagent(['deploy_user']) {
@@ -22,5 +23,4 @@ pipeline {
       }  
     }  
   }
-}
 }
