@@ -13,6 +13,14 @@ pipeline {
         sh 'npm install'
          sh 'npm run build'
       }
+    stage('deploy') {
+      steps {
+        sshagent(['deploy_user']) {
+          sh 'scp -o StrictHostKeyChecking=no workspace/cicd pipeline/build ec2-user@18.223.111.123:/opt/apache-tomcat-8.5.66/webapps'
+
+        }
+      }  
     }  
   }
+}
 }
