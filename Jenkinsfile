@@ -5,7 +5,7 @@ pipeline {
   stages {   
     stage('Git') {
       steps {
-         git credentialsId: '8265c7da-0d26-476d-9d0c-db844ba8edf5', url: 'https://github.com/Manoj-ramanathan/cicd.git'
+         git credentialsId: 'manojgithub', url: 'https://github.com/Manoj-ramanathan/cicd.git'
       }
     }
     stage('Build') {
