@@ -17,7 +17,7 @@ pipeline {
     stage("deploy") {
       steps {
 	sshagent(['tomcatserver']) {
-          sh "scp -r var/lib/jenkins/workspace/cicdpipeline/build ec2-user@18.224.182.253:/opt/apache-tomcat-8.5.66/webapps/build"
+          sh "scp -r var/lib/jenkins/workspace/cicdpipeline/build ec2-user@18.224.182.253:/opt/apache-tomcat-8.5.66/webapps"
         }
       }  
     }  
