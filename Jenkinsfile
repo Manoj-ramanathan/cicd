@@ -17,7 +17,7 @@ pipeline {
     stage("deploy") {
       steps {
 	sshagent(['tomcatserver']) {
-          sh "scp -r build root@18.220.141.223:8080:/opt/apache-tomcat-8.5.66/webapps"
+          sh "scp build root@18.220.141.223:/opt/apache-tomcat-8.5.66/webapps"
         }
       }  
     }  
