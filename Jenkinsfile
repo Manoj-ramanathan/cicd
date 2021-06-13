@@ -17,7 +17,7 @@ pipeline {
     stage("deploy") {
       steps {
 	sshagent(['tomcatserver']) {
-          sh "scp -r var/lib/jenkins/workspace/cicdpipeline/build ec2-user@18.219.147.70:/opt/apache-tomcat-8.5.66/webapps/build"
+          sh "scp -r -o StrictHostKeyChecking=no var/lib/jenkins/workspace/cicdpipeline/build ec2-user@18.219.147.70:/opt/apache-tomcat-8.5.66/webapps/build"
         }
       }  
     }  
