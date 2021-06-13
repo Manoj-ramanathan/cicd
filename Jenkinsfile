@@ -17,7 +17,7 @@ pipeline {
     stage("deploy") {
       steps {
 	sshagent(['tomcatserver']) {
-          sh "scp var/lib/jenkins/workspace/cicdpipeline/build root@18.224.182.253:/opt/apache-tomcat-8.5.66/webapps/build"
+          sh "scp var/lib/jenkins/workspace/cicdpipeline/build root@172.31.43.178:/opt/apache-tomcat-8.5.66/webapps/build"
         }
       }  
     }  
