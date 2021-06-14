@@ -17,7 +17,7 @@ pipeline {
     }
      stage("deploy") {
        steps {
-          bat "scp -P http://localhost:8090 C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\cicdpipeline\build tomcat@http://localhost:8080:/C:\Users\GIS00246\Downloads\tomcat\webapps"
+          bat "scp -r /Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/cicdpipeline/build tomcat@http://localhost:8080:/C:\Users\GIS00246\Downloads\tomcat\webapps"
        }
     } 
    
