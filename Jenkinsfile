@@ -1,3 +1,4 @@
+#!/bin/bash
 pipeline {
   agent any
     
@@ -10,8 +11,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'npm install'
-         sh 'npm run build'
+        npm install
+        npm run build
       }
     }
    
