@@ -12,7 +12,7 @@ pipeline {
     stage('Build') {
       steps {
         bat 'npm install'
-        bat 'npm run build'
+        bat 'npm run trader'
       }
     }
   }
