@@ -17,7 +17,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        cp -a C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/cicdpipeline/build/. ec2-user@35.174.3.12:8080:/opt/apache-tomcat-8.5.66/webapps
+        cp -a C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/cicdpipeline/build/. ec2-user@35.174.3.12:/opt/apache-tomcat-8.5.66/webapps
       }
     }
   }
