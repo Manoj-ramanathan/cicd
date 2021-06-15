@@ -11,14 +11,14 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'npm install'
-        sh 'npm run build'
+       bat 'npm install'
+        bat 'npm run build'
       }
     }
     stage('deploy') {
       steps {
         sshagent(['deploy']) {
-         sh 'scp -p -o StrictHostKeyChecking=no http://localhost:8090/job/cicdpipeline/build/. ec2-user@35.174.3.12:8080:/opt/apache-tomcat-8.5.66/webapps/build/.'
+         bat 'scp -p -o StrictHostKeyChecking=no http://localhost:8090/job/cicdpipeline/build/. ec2-user@35.174.3.12:8080:/opt/apache-tomcat-8.5.66/webapps/build/.'
         }
       }
     }
