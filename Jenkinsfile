@@ -18,7 +18,7 @@ pipeline {
     stage('deploy') {
       steps {
         sshagent(['deploy']) {
-         bat 'scp -p -o -r cp -a StrictHostKeyChecking=no http://localhost:8090/job/cicdpipeline/build/. ec2-user@35.174.3.12:8080:/opt/apache-tomcat-8.5.66/webapps/build/.'
+         ssh 'scp -p -o -r cp -a StrictHostKeyChecking=no http://localhost:8090/job/cicdpipeline/build/. ec2-user@35.174.3.12:8080:/opt/apache-tomcat-8.5.66/webapps/build/.'
         }
       }
     }
