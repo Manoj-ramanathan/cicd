@@ -18,7 +18,7 @@ pipeline {
     stage('deploy') {
       steps {
         sshagent(['deploy']) {
-         sh 'scp -r -p -o cp -a StrictHostKeyChecking=no /Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/cicdpipeline/build/index.html ec2-user@54.145.136.12:8080:~/opt/apache-tomcat-8.5.66/webapps/index.html'
+         sh 'scp -r /Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/cicdpipeline/build/index.html ec2-user@54.145.136.12:8080:~/opt/apache-tomcat-8.5.66/webapps/index.html'
         }
       }
     }
